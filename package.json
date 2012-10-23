@@ -5,7 +5,8 @@
   "keywords": ["axon", "rpc", "cloud"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
   "dependencies": {
-    "debug": "*"
+    "debug": "*",
+    "commander": "1.0.5"
   },
   "devDependencies": {
     "axon": "0.4.2",
