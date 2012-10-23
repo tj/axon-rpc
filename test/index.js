@@ -50,10 +50,10 @@ describe('Client#methods(fn)', function(){
   it('should respond with available methods', function(done){
     client.methods(function(err, methods){
       assert(!err);
-      assert(methods.add.name == 'add');
-      assert(methods.add.params[0] == 'a');
-      assert(methods.add.params[1] == 'b');
-      assert(methods.add.params[2] == 'fn');
+      assert('add' == methods.add.name);
+      assert('a' == methods.add.params[0]);
+      assert('b' == methods.add.params[1]);
+      assert('fn' == methods.add.params[2]);
       assert(methods.uppercase);
       done();
     });
