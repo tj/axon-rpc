@@ -29,3 +29,14 @@ describe('Server#expose(name, fn)', function(){
     });
   })
 })
+
+describe('Client#call(name, ..., fn)', function(){
+  describe('when method is not exposed', function(){
+    it('should error', function(done){
+      client.call('something', function(err){
+        assert('method "something" does not exist' == err.message);
+        done();
+      });
+    })
+  })
+})
