@@ -13,5 +13,8 @@
     "better-assert": "*",
     "mocha": "*"
   },
+  "bin": {
+    "arpc": "bin/arpc"
+  },
   "main": "index"
 }
