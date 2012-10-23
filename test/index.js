@@ -46,6 +46,20 @@ describe('Server#expose(obj)', function(){
   })
 })
 
+describe('Client#methods(fn)', function(){
+  it('should respond with available methods', function(done){
+    client.methods(function(err, methods){
+      assert(!err);
+      assert(methods.add.name == 'add');
+      assert(methods.add.params[0] == 'a');
+      assert(methods.add.params[1] == 'b');
+      assert(methods.add.params[2] == 'fn');
+      assert(methods.uppercase);
+      done();
+    });
+  })
+})
+
 describe('Client#call(name, ..., fn)', function(){
   describe('when method is not exposed', function(){
     it('should error', function(done){
