@@ -14,6 +14,34 @@ var server = new rpc.Server(rep);
 rep.bind(4000);
 ```
 
+### Server#expose(name, fn)
+
+  Expose a single method `name` mapped to `fn` callback.
+
+```js
+server.expose('add', function(function(a, b, fn){
+  fn(null, a + b);
+}));
+```
+
+### Server#expose(object)
+
+  Expose several methods:
+
+```js
+server.expose({
+  add: function(){ ... },
+  sub: function(){ ... }
+});
+```
+
+  This may also be used to expose
+  an entire node module with exports:
+
+```js
+server.expose(require('./api'));
+```
+
 ## Client
 
 ```js
@@ -23,6 +51,27 @@ var rpc = require('axon-rpc')
 
 var client = new rpc.Client(req);
 req.connect(4000);
+```
+
+#### Client#methods(fn)
+
+  Request available methods:
+
+```js
+client.methods(function(err, methods){
+  console.log(methods);
+})
+```
+
+  Responds with objects such as:
+
+```js
+{
+  add: {
+    name: 'add',
+    params: ['a', 'b', 'fn']
+  }
+}
 ```
 
 ## License 
