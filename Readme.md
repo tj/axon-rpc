@@ -1,7 +1,29 @@
 
 # axon-rpc
 
-  RPC for axon
+  RPC client / server for [axon](https://github.com/visionmedia/axon).
+
+## Server
+
+```js
+var rpc = require('axon-rpc')
+  , axon = require('axon')
+  , rep = axon.socket('rep');
+
+var server = new rpc.Server(rep);
+rep.bind(4000);
+```
+
+## Client
+
+```js
+var rpc = require('axon-rpc')
+  , axon = require('axon')
+  , req = axon.socket('req');
+
+var client = new rpc.Client(req);
+req.connect(4000);
+```
 
 ## License 
 
