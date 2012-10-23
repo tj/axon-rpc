@@ -1,0 +1,15 @@
+{
+  "name": "axon-rpc",
+  "version": "0.0.1",
+  "description": "RPC for axon",
+  "keywords": ["axon", "rpc", "cloud"],
+  "author": "TJ Holowaychuk <tj@learnboost.com>",
+  "dependencies": {
+    "axon": "0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index"
+}
