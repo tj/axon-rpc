@@ -55,4 +55,18 @@ describe('Client#call(name, ..., fn)', function(){
       });
     })
   })
+
+  describe('with an error response', function(){
+    it('should provide an Error', function(done){
+      server.expose('error', function(fn){
+        fn(new Error('boom'));
+      });
+
+      client.call('error', function(err){
+        assert(err instanceof Error);
+        assert('boom' == err.message);
+        done();
+      });
+    })
+  })
 })
