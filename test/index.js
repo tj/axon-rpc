@@ -30,6 +30,22 @@ describe('Server#expose(name, fn)', function(){
   })
 })
 
+describe('Server#expose(obj)', function(){
+  it('should expose multiple', function(done){
+    server.expose({
+      uppercase: function(str, fn){
+        fn(null, str.toUpperCase());
+      }
+    });
+
+    client.call('uppercase', 'hello', function(err, str){
+      assert(!err);
+      assert('HELLO' == str);
+      done();
+    });
+  })
+})
+
 describe('Client#call(name, ..., fn)', function(){
   describe('when method is not exposed', function(){
     it('should error', function(done){
