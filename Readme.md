@@ -53,7 +53,18 @@ var client = new rpc.Client(req);
 req.connect(4000);
 ```
 
-#### Client#methods(fn)
+### Client#call(name, ..., fn)
+
+  Invoke method `name` with some arguments and invoke `fn(err, ...)`:
+
+```js
+client.call('add', 1, 2, function(err, n){
+  console.log(n);
+  // => 3
+})
+```
+
+### Client#methods(fn)
 
   Request available methods:
 
