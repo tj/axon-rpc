@@ -5,11 +5,12 @@
   "keywords": ["axon", "rpc", "cloud"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
   "dependencies": {
-    "axon": "0.4.2"
+    "debug": "*"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "axon": "0.4.2",
+    "better-assert": "*",
+    "mocha": "*"
   },
   "main": "index"
 }
