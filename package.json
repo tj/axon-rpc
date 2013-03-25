@@ -9,7 +9,7 @@
     "commander": "1.0.5"
   },
   "devDependencies": {
-    "axon": "0.4.2",
+    "axon": "0.5.1",
     "better-assert": "*",
     "mocha": "*"
   },
