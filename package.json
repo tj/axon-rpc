@@ -1,6 +1,6 @@
 {
   "name": "axon-rpc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "RPC for axon",
   "keywords": ["axon", "rpc", "cloud"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
