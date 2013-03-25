@@ -38,9 +38,9 @@ rep.bind(4000);
   Expose a single method `name` mapped to `fn` callback.
 
 ```js
-server.expose('add', function(function(a, b, fn){
+server.expose('add', function(a, b, fn){
   fn(null, a + b);
-}));
+});
 ```
 
 ### Server#expose(object)
@@ -104,7 +104,7 @@ client.methods(function(err, methods){
 }
 ```
 
-## License 
+## License
 
 (The MIT License)
 
