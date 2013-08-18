@@ -104,6 +104,21 @@ client.methods(function(err, methods){
 }
 ```
 
+### Client#bind(ctx, methods)
+
+  Generates actual object methods given a descriptor:
+
+```js
+client.methods(function(err, methods){
+  client.bind(client, methods);
+
+  client.add(1, 2, function(err, n){
+    console.log(n);
+    // => 3
+  });
+})
+```
+
 ## License
 
 (The MIT License)
