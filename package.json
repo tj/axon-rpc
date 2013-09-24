@@ -4,6 +4,9 @@
   "description": "RPC for axon. Modified for NGN.",
   "keywords": ["axon", "rpc", "cloud", "ngn"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
+  "contributors":[
+    "Corey Butler <corey@nodengn.com>"
+  ]
   "dependencies": {
     "debug": "*",
     "commander": "1.0.5"
