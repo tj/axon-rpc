@@ -1,8 +1,8 @@
 {
   "name": "ngn-axon-rpc",
   "version": "0.0.2",
-  "description": "RPC for axon",
-  "keywords": ["axon", "rpc", "cloud"],
+  "description": "RPC for axon. Modified for NGN.",
+  "keywords": ["axon", "rpc", "cloud", "ngn"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
   "dependencies": {
     "debug": "*",
