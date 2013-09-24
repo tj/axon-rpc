@@ -1,5 +1,5 @@
 {
-  "name": "axon-rpc",
+  "name": "ngn-axon-rpc",
   "version": "0.0.2",
   "description": "RPC for axon",
   "keywords": ["axon", "rpc", "cloud"],
