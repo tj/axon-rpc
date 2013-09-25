@@ -1,3 +1,5 @@
+This is a modified version of [axon-rpc](https://github.com/visionmedia/axon-rpc),
+designed for use with [NGN](https://github.com/nodengn/NGN).
 
 # axon-rpc
 
