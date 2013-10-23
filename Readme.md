@@ -1,4 +1,3 @@
-
 # axon-rpc
 
   RPC client / server for [axon](https://github.com/visionmedia/axon).
