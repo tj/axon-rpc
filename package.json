@@ -9,12 +9,15 @@
     "commander": "1.0.5"
   },
   "devDependencies": {
-    "axon": "0.5.1",
+    "axon": "2.0.0",
     "better-assert": "*",
     "mocha": "*"
   },
   "bin": {
     "arpc": "bin/arpc"
   },
-  "main": "index"
+  "main": "index",
+  "scripts": {
+    "test": "mocha"
+  }
 }
