@@ -84,6 +84,21 @@ describe('Client#call(name, ..., fn)', function(){
         assert(err.stack === svrErr.stack, 'Original error stack should have been passed to the client');
         done();
       });
-    })
+    });
+    
+    it('empty string edge case should still work', function(done){
+      var svrErr;
+      server.expose('error', function(fn){
+        svrErr = new Error('');
+        fn(svrErr);
+      });
+
+      client.call('error', function(err){
+        assert(err instanceof Error);
+        assert(svrErr.message == err.message);
+        assert(err.stack === svrErr.stack, 'Original error stack should have been passed to the client');
+        done();
+      });
+    });
   });
 });
