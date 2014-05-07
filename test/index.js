@@ -11,7 +11,7 @@ var rep = axon.socket('rep');
 var req = axon.socket('req');
 
 rep.bind(4000);
-req.connect(4000);
+req.connect(4000, 'localhost');
 
 var server = new rpc.Server(rep);
 var client = new rpc.Client(req);
