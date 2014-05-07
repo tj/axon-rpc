@@ -1,8 +1,12 @@
 {
   "name": "axon-rpc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Remote procedure calls built on top of axon.",
-  "keywords": ["axon", "rpc", "cloud"],
+  "keywords": [
+    "axon",
+    "rpc",
+    "cloud"
+  ],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
   "contributors": [
     {
