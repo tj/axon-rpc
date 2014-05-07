@@ -1,7 +1,7 @@
 {
   "name": "axon-rpc",
   "version": "0.0.2",
-  "description": "RPC for axon",
+  "description": "Remote procedure calls built on top of axon.",
   "keywords": ["axon", "rpc", "cloud"],
   "author": "TJ Holowaychuk <tj@learnboost.com>",
   "dependencies": {
@@ -19,5 +19,9 @@
   "main": "index",
   "scripts": {
     "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visionmedia/axon-rpc.git"
   }
 }
