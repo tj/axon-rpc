@@ -27,8 +27,8 @@ describe('Server#expose(name, fn)', function(){
       assert(3 === n);
       done();
     });
-  })
-})
+  });
+});
 
 describe('Server#expose(obj)', function(){
   it('should expose multiple', function(done){
@@ -43,8 +43,8 @@ describe('Server#expose(obj)', function(){
       assert('HELLO' == str);
       done();
     });
-  })
-})
+  });
+});
 
 describe('Client#methods(fn)', function(){
   it('should respond with available methods', function(done){
@@ -57,8 +57,8 @@ describe('Client#methods(fn)', function(){
       assert(methods.uppercase);
       done();
     });
-  })
-})
+  });
+});
 
 describe('Client#call(name, ..., fn)', function(){
   describe('when method is not exposed', function(){
@@ -68,19 +68,22 @@ describe('Client#call(name, ..., fn)', function(){
         done();
       });
     })
-  })
+  });
 
   describe('with an error response', function(){
     it('should provide an Error', function(done){
+      var svrErr;
       server.expose('error', function(fn){
-        fn(new Error('boom'));
+        svrErr = new Error('boom');
+        fn(svrErr);
       });
 
       client.call('error', function(err){
         assert(err instanceof Error);
         assert('boom' == err.message);
+        assert(err.stack === svrErr.stack, 'Original error stack should have been passed to the client');
         done();
       });
     })
-  })
-})
+  });
+});
