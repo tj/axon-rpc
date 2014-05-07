@@ -16,6 +16,8 @@ req.connect(4000, 'localhost');
 var server = new rpc.Server(rep);
 var client = new rpc.Client(req);
 
+var ctx = {};
+
 describe('Server#expose(name, fn)', function(){
   it('should expose a single function', function(done){
     server.expose('add', function(a, b, fn){
@@ -82,5 +84,29 @@ describe('Client#call(name, ..., fn)', function(){
         done();
       });
     })
+  })
+})
+
+describe('Client#bind(ctx, methods)', function(){
+  it('should bind methods in context', function(done){
+    client.methods(function(err, methods){
+      client.bind(ctx, methods);
+      assert('add' in ctx);
+      assert('uppercase' in ctx);
+      assert('error' in ctx);
+      done();
+    });
+  })
+
+  it('should be callable', function(done){
+    ctx.add(1, 2, function(err, n){
+      assert(!err);
+      assert(3 === n);
+      ctx.uppercase('hello', function(err, str){
+        assert(!err);
+        assert('HELLO' == str);
+        done();
+      });
+    });
   })
 })
